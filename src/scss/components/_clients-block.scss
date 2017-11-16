@@ -1,0 +1,51 @@
+.clients-block{
+	padding: 52px 0 93px;
+	position: relative;
+	@include media('<tablet') {
+		padding-top: 61px;
+		padding-bottom: 57px;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 14px;
+		background: url(../images/triangle-white.png) repeat-x 0 0;
+		left: 0;
+		bottom: 100%;
+		z-index: 2;
+		margin-bottom: -1px;
+	}
+	.title-section{
+		margin: 0 0 61px;
+		@include media('<tablet') {
+			margin-bottom: 30px;
+		}
+	}
+	.clients-list{
+		@extend %listreset;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		li{
+			width: 25%;
+			text-align: center;
+			margin: 0 0 41px;
+			padding: 0 15px;
+			cursor: pointer;
+			@include media('<tablet') {
+				width: 50%;
+				margin-bottom: 10px;
+				padding: 0 30px;
+			}
+			img{
+				@include animate(filter);
+				filter: grayscale(1);
+				&:hover{
+					filter: grayscale(0);
+				}
+			}
+		}
+	}
+}

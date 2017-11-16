@@ -1,0 +1,29 @@
+.language{
+	@extend %listreset;
+	display: flex;
+	justify-content: flex-end;
+	@include media('<widescreen') {
+		font-size: 15px;
+	}
+	@include media('<tablet') {
+		margin: 45px 0;
+	}
+	li{
+		margin: 0 0 0 23px;
+		@include media('<widescreen') {
+			margin-left: 20px;
+		}
+		&:first-child{
+			margin: 0;
+		}
+		&.active{
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+	a{
+		color: #fff;
+		text-transform: uppercase;
+	}
+}

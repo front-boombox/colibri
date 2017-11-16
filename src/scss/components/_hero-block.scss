@@ -1,0 +1,128 @@
+.hero-block{
+	@include animate(margin, 1s);
+	height: 57vw;
+	position: relative;
+	overflow: hidden;
+	@include media('>=desktop') {
+		margin: 0 0 10vw;
+	}
+	@include media('<desktop') {
+		margin: 0 0 15vw;
+	}
+	@include media('<tablet') {
+		border-radius: 0;
+		margin-bottom: 30vw;
+	}
+	@media (max-width: 414px){
+		height: 460px;
+	}
+	&.slide-up{
+		margin-bottom: 7%;
+	}
+	.bg1{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 9000px;
+		height: 9000px;
+		background: #26c6da url(../images/bg1.png) repeat;
+		// background-size: 22% 21%;
+		border-radius: 50%;
+		transform: translateX(-50%);
+		@include media('<tablet') {
+			display: none;
+		}
+	}
+}
+.hero-slider-wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	.container{
+		max-width: 89.35%;
+		margin: 0 auto;
+		padding: 0 15px;
+		@include media('<tablet') {
+			max-width: none;
+			padding: 0;
+		}
+	}
+}
+.hero-slider{
+	@include animate(transform, 1s);
+	padding: 110px 0 70px;
+	@include media('<tablet') {
+		padding: 108px 0 50px;
+	}
+	&.slide-up{
+		transform: translateY(-50%);
+	}
+	.swiper-wrapper{
+		overflow: hidden;
+		box-shadow: 0px 47px 56px -26px rgba(38,198,218,1);
+	}
+	.swiper-slide{
+		font-size: 0;
+		@media (max-width: 414px){
+			height: 400px;
+		}
+		img{
+			border-radius: 0 0 13px 13px;
+			width: 100%;
+			@media (max-width: 414px){
+				width: auto;
+				max-width: none;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+	.title-slide{
+		font: 100px/1.2 'Exo2-Black', Arial, Helvetica, sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, .3);
+		border-radius: 0 0 13px 13px;
+		@include media('<widescreen') {
+			font-size: 70px;
+		}
+		@include media('<desktop') {
+			font-size: 50px;
+		}
+		@include media('<tablet') {
+			font-size: 48px;
+		}
+		@media (max-width: 414px){
+			z-index: 1;
+		}
+	}
+	.swiper-pagination-bullet{
+		@include animate(transform);
+		width: 10px;
+		height: 10px;
+		vertical-align: middle;
+		background: #fff;
+		opacity: 1;
+		margin: 0 11px !important;
+	}
+	.swiper-pagination-bullet-active{
+		transform: scale(2);
+	}
+	.swiper-pagination{
+		bottom: 19%;
+		@include media('<tablet') {
+			bottom: 60px;
+		}
+	}
+}

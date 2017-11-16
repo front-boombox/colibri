@@ -1,0 +1,145 @@
+#wrapper{
+	overflow-x: hidden;
+}
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+	@include media('<tablet') {
+		padding: 0 10px;
+	}
+}
+.title-section{
+	font-family: 'Roboto-Bold', Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	color: #333;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	&.white{
+		color: #fff;
+	}
+}
+.simple-input{
+	@include placeholder {
+		color: #333 !important;
+	}
+	@include animate(border color);
+	color: #333;
+	font-family: 'Roboto-Regular', Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	border: 2px solid #26c6da !important;
+	padding: 12px 15px !important;
+	height: 60px;
+	@include media('<tablet') {
+		font-size: 18px;
+	}
+	&:hover, &:focus{
+		@include placeholder {
+			color: #26c6da !important;
+		}
+		border-color: #24b9cc !important;
+		outline: none;
+		color: #26c6da;
+	}
+	&.error{
+		@include placeholder {
+			color: #ff0000 !important;
+		}
+		border-color: #ff0000 !important;
+	}
+}
+.bg{
+	// @include animate(background-position);
+	background-repeat: repeat;
+    // background-position: 50% 0;
+    // background-size: 100% 100%;
+}
+.not-found-wrapper{
+	text-align: center;
+	padding: 160px 0;
+	.container{
+		max-width: 600px;
+	}
+	.title{
+		font: 30px/1.2 'Roboto-Bold', Arial, Helvetica, sans-serif;
+		display: block;
+		margin: 0 0 10px;
+	}
+}
+.portfolio-wrapper{
+	padding: 90px 0;
+	@include media('<tablet') {
+		padding: 30px 0;
+	}
+	.portfolio-gallery{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@media (max-width: 414px){
+			display: block;
+		}
+		> a{
+			position: relative;
+			width: 31.6%;
+			margin: 0 0 20px;
+			font-size: 0;
+			overflow: hidden;
+			@include media('<tablet') {
+				width: 49%;
+				margin: 0 0 10px;
+			}
+			@media (max-width: 414px){
+				width: 100%;
+			}
+			&:hover{
+				&:before{
+					background: rgba(0, 0, 0, .5);
+				}
+				img{
+					@media (min-width: 415px){
+						transform: scale(1.1);
+					}
+				}
+			}
+			&:before{
+				@media (min-width: 415px){
+					@include animate(background);
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					display: block;
+					background: transparent;
+					z-index: 1;
+				}
+			}
+			img{
+				@include animate(transform);
+				width: 100%;
+			}
+		}
+	}
+}
+.blueimp-gallery{
+	> .next, > .prev{
+		width: 54px;
+		height: 123px;
+		margin-top: -62px;
+		border: none;
+		background: none;
+		display: block;
+	}
+	> .next{
+		background-image: url(../images/next.png);
+	}
+	> .prev{
+		background-image: url(../images/prev.png);
+	}
+	>.close {
+		padding: 6px 15px;
+		display: block;
+	}
+}

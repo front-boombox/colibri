@@ -1,0 +1,130 @@
+.team-block{
+	position: relative;
+	&:after{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 22px;
+		background: url(../images/wave-yellow.png) repeat-x 0 0;
+		left: 0;
+		top: 100%;
+		margin-top: -1px;
+		z-index: 2;
+	}
+	.team-wrap{
+		position: relative;
+		padding: 115px 0 16px;
+		overflow: hidden;
+		@include media('<tablet') {
+			padding: 57px 0 29px;
+		}
+	}
+	.title-section{
+		padding: 0 15px;
+		margin: 0 0 59px;
+		@include media('<tablet') {
+			margin-bottom: 58px;
+		}
+	}
+	.bg2{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 9000px;
+		height: 9000px;
+		background: #fdd835 url(../images/bg2.png) repeat;
+		// background-size: 20% 20%;
+		border-radius: 50%;
+		transform: translateX(-50%);
+	}
+	.swiper-wrapper{
+		@include media('>=tablet') {
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 0 -15px;
+			width: auto;
+			transform: translate3d(0, 0, 0) !important;
+		}
+	}
+	.team-slider{
+		padding-bottom: 100px;
+		@include media('<tablet') {
+			padding: 60px 0;
+		}
+	}
+	.swiper-slide{
+		// @include animate(transform);
+		@include media('>=tablet') {
+			width: auto !important;
+			padding: 0 15px;
+			margin: 0 0 43px;
+		}
+		&:hover{
+			.img-holder{
+				border-radius: 16px;
+				border-color: transparent;
+				.img{
+					opacity: 0;
+				}
+			}
+		}
+		.img-holder{
+			@include animate(border-radius border);
+			border-radius: 50%;
+			overflow: hidden;
+			border: 3px solid #fff;
+			box-sizing: border-box;
+			font-size: 0;
+			max-width: 288px;
+			margin: 0 0 4px;
+			cursor: pointer;
+			position: relative;
+			@include media('<tablet') {
+				margin: 0 auto 22px;
+			}
+			.img{
+				@include animate(opacity);
+			}
+			.img-hover{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+		}
+		.name{
+			font-family: 'Roboto-Bold', Arial, Helvetica, sans-serif;
+			font-size: 30px;
+			color: #333;
+			display: block;
+			text-align: center;
+			margin: 0 0 -2px;
+		}
+		.position{
+			font-size: 24px;
+			color: #333;
+			display: block;
+			text-align: center;
+		}
+	}
+	.swiper-pagination{
+		bottom: auto;
+		top: 0;
+		@include media('>=tablet') {
+			display: none;
+		}
+	}
+	.swiper-pagination-bullet{
+		@include animate(transform);
+		width: 10px;
+		height: 10px;
+		vertical-align: middle;
+		background: #fff;
+		opacity: 1;
+	}
+	.swiper-pagination-bullet-active{
+		transform: scale(2);
+	}
+}

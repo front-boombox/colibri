@@ -1,0 +1,22 @@
+.social{
+	@extend %listreset;
+	display: flex;
+	justify-content: flex-end;
+	.header &{
+		padding: 14px 0 19px;
+	}
+	li{
+		margin: 0 0 0 20px;
+		&:first-child{
+			margin: 0;
+		}
+	}
+	a{
+		@include animate(opacity);
+		color: #fff;
+		text-decoration: none;
+		&:hover{
+			opacity: .7;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.btn-default{
+	@include animate(background);
+	font: 18px/1.2 'Roboto-Bold', Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	background: #26c6da;
+	border-radius: 25px;
+	display: inline-block;
+	text-decoration: none;
+	padding: 15px 27px;
+	border: none;
+	outline: none;
+	text-align: center;
+	&:hover{
+		background: #24b9cc;
+	}
+}
+.btn-simple{
+	@include animate(background);
+	font: 30px/1.2 'Roboto-Regular', Arial, Helvetica, sans-serif;
+	color: #fff;
+	background: #26c6da;
+	display: inline-block;
+	text-decoration: none;
+	padding: 12px 15px;
+	border: none;
+	outline: none;
+	text-align: center;
+	@include media('<tablet') {
+		font-size: 20px;
+	}
+	&:hover{
+		background: #24b9cc;
+	}
+}

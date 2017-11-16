@@ -1,0 +1,17 @@
+.text-block{
+	color: #333;
+	text-align: justify;
+	line-height: 1.35;
+	margin: 0 0 165px;
+	@include media('<desktop') {
+		margin-bottom: 50px;
+	}
+	.title-section{
+		margin: 0 0 27px;
+	}
+	.container{
+		@include media('<widescreen') {
+			padding: 0 20px;
+		}
+	}
+}
